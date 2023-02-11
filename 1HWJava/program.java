@@ -6,10 +6,12 @@ public class program {
         printChristmasTree(7);
     }
 
+    //Вычисление n-ого трецгольного числа
     public static int triangularNumber(int n) {
         return (n*(n+1))/2;
     }
 
+    //Рисуем ёлку
     public static void printChristmasTree(int height) {
         for (int i = 1; i <= height; i++) {
             String level = "";
