@@ -1,14 +1,8 @@
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-// -1 Стены
-// -2 Выход
-public class Labirint {
-    public static void main(String[] args) {
-        printField(fieldBuilder());
-        printField(searchWay(fieldBuilder(), new Point(4,5,1)));
-        printField(searchWay(fieldBuilder(), new Point(1,1,1)));
-    }
+public class WorkingWithField {
+    
     
     public static int[][] searchWay(int[][] field, Point startPosition) {
         int[][] result = field.clone();
@@ -38,44 +32,5 @@ public class Labirint {
             }            
         }
         return result;
-    }
-
-    public static void printField(int[][] field) {
-        for (int[] points : field) {
-            for (int point : points) {
-                StringBuilder line = new StringBuilder();
-                line.append(("" + point).length() > 1 ? " " + point : "  " + point);
-                System.out.print(line);
-            }
-            System.out.println("");
-        }
-        System.out.println();
     }   
-
-    public static int[][] fieldBuilder() {
-        int[][] field = {
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1}, 
-            {-1,  0,  0,  0, -1,  0, -1,  0, -2, -1},
-            {-1,  0, -1,  0,  0,  0, -1,  0,  0, -1},
-            {-1,  0, -1,  0, -1,  0,  0,  0,  0, -1},
-            {-1,  0, -1,  0, -1, -1,  0,  0,  0, -1},
-            {-1,  0, -1,  0,  0, -1,  0, -1,  0, -1},
-            {-1,  0, -1,  0,  0, -1,  0, -1,  0, -1},
-            {-1,  0, -1, -1, -1, -1,  0, -1,  0, -1},
-            {-1, -2,  0,  0,  0,  0,  0, -1,  0, -1},
-            {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1}
-        };
-        return field;
-    }
-}
-
-class Point {
-    int X;
-    int Y;
-    int number;
-    public Point(int x, int y, int number) {
-        X = x;
-        Y = y;
-        this.number = number;
-    }     
 }
