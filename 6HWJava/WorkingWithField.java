@@ -3,9 +3,16 @@ import java.util.Deque;
 
 public class WorkingWithField {
     
-    
-    public static int[][] searchWay(int[][] field, Point startPosition) {
+    /**
+     * 
+     * @param field Поле со стенами
+     * @param startPosition Точка входа
+     * @param endPosition Точка выхода
+     * @return
+     */
+    public static int[][] searchWay(int[][] field, Point startPosition, Point endPosition) {
         int[][] result = field.clone();
+        result[endPosition.Y][endPosition.X] = endPosition.number;
         Deque<Point> buffer = new ArrayDeque<Point>();
         Point currentPosition = new Point(startPosition.X, startPosition.Y, startPosition.number);
         buffer.add(currentPosition);

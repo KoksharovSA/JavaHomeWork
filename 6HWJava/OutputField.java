@@ -1,6 +1,8 @@
-public class OutputField {
-    
-
+public class OutputField { 
+    /**
+     * 
+     * @param field Поле где -1 это стены; -2 это выходы; 0 это пустота
+     */
     public static void printFieldInConsol(int[][] field) {
         for (int[] points : field) {
             for (int point : points) {
